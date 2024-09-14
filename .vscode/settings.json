@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/.env*": true,
+    "**/node_modules/**": true,
+    "**/.dockerignore": true,
+    "**/.gitignore": true,
+    "**/docker-compose.yml": true,
+    "**/Dockerfile": true,
+    "**/nodemon.json": true,
+    "**/package*.json": true,
+    "**/tsconfig.json": true,
+    "**/yarn.lock": true
+  }
+}
