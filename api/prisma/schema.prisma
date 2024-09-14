@@ -28,7 +28,7 @@ model Loan {
   deadline          DateTime
   returnDate        DateTime? @map("return_date")
   lostDate          DateTime? @map("lost_date")
-  delayFeePerDay    Decimal   @map("delay_fee_per_day")
+  delayFeePerDay    Float   @map("delay_fee_per_day")
   createdAt         DateTime @default(now()) @map("created_at")
   updatedAt         DateTime @updatedAt @map("updated_at")
   book              Book @relation(fields: [bookId], references: [id])
