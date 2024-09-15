@@ -9,6 +9,14 @@
     "**/nodemon.json": true,
     "**/package*.json": true,
     "**/tsconfig.json": true,
-    "**/yarn.lock": true
+    "**/yarn.lock": true,
+    "**/tsconfig.node.json": true,
+    "**/tsconfig.app.json": true,
+    "**/eslint.config.js": true,
+    "**/postcss.config.js": true,
+    "**/index.html": true,
+    "**/vite.config.ts": true,
+    "**/vite-env.d.ts": true,
+    "**/tailwind.config.js": true
   }
 }
