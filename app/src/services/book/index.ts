@@ -6,6 +6,7 @@ const BOOKS_ENDPOINT = '/books';
 
 export const getAllBooks = async () => {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     const { data } = await api.get(BOOKS_ENDPOINT);
     return z.array(bookOutputSchema).parse(data);
   } catch (error) {

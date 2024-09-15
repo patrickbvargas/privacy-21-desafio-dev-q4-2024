@@ -1,6 +1,10 @@
 import { z } from 'zod';
 import { api } from '@/lib/axios';
-import { loanOutputSchema, type LaonCreateSchemaType } from '@/schemas/loan';
+import {
+  loanOutputSchema,
+  type LoanOutputSchemaType,
+  type LoanCreateSchemaType,
+} from '@/schemas/loan';
 
 const LOANS_ENDPOINT = '/loans';
 
@@ -30,9 +34,18 @@ export const getOneLoan = async (id: string) => {
   }
 };
 
-export const createLoan = async (payload: LaonCreateSchemaType) => {
+export const updateLoan = async (payload: LoanOutputSchemaType) => {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 5000)); // TODO: remove
+    const { data } = await api.put(`${LOANS_ENDPOINT}/${payload.id}`, payload);
+    return data;
+  } catch (error) {
+    console.error('Error updating loan:', error);
+    throw error;
+  }
+};
+
+export const createLoan = async (payload: LoanCreateSchemaType) => {
+  try {
     const { data } = await api.post(LOANS_ENDPOINT, payload);
     return data;
   } catch (error) {
@@ -43,7 +56,6 @@ export const createLoan = async (payload: LaonCreateSchemaType) => {
 
 export const deleteLoan = async (id: string) => {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 5000)); // TODO: remove
     const { data } = await api.delete(`${LOANS_ENDPOINT}/${id}`);
     return data;
   } catch (error) {

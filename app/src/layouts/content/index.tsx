@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { cn } from '@/utils';
+import { AppRoutes } from '@/routes';
+import { Toaster } from '@/components/ui/sonner';
 
-export const Content = ({
-  className,
-  ...props
-}: React.ComponentProps<'main'>) => {
-  return <main className={cn('', className)} {...props} />;
+export const Content = ({ ...props }: React.ComponentProps<'main'>) => {
+  return (
+    <main className="flex flex-col" {...props}>
+      <AppRoutes />
+      <Toaster />
+    </main>
+  );
 };

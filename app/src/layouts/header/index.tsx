@@ -1,12 +1,11 @@
 import * as React from 'react';
-
-interface HeaderProps extends React.ComponentProps<'header'> {
-  title: string;
-}
-export const Header = ({ title = '', ...props }: HeaderProps) => {
+export const Header = ({ ...props }: React.ComponentProps<'header'>) => {
   return (
     <header {...props}>
-      <h1 className="text-2xl tracking-wider">{title}</h1>
+      <a href="/loans">
+        <h1 className="text-3xl tracking-wider mb-4">Privacy21 Demo</h1>
+      </a>
+      <hr className="border-neutral-300" />
     </header>
   );
 };

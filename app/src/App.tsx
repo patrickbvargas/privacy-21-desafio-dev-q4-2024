@@ -1,18 +1,17 @@
 import { GlobalProvider } from '@/providers';
-import { LoanList } from '@/pages';
+import { BrowserRouter } from 'react-router-dom';
 import { Container, Header, Content } from '@/layouts';
 
 function App() {
   return (
-    <GlobalProvider>
-      <Container>
-        <Header title="Privacy21" />
-        <Content>
-          {/* // TODO: implement React Router} */}
-          <LoanList />
-        </Content>
-      </Container>
-    </GlobalProvider>
+    <BrowserRouter>
+      <GlobalProvider>
+        <Container>
+          <Header />
+          <Content />
+        </Container>
+      </GlobalProvider>
+    </BrowserRouter>
   );
 }
 
