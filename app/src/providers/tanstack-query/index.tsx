@@ -1,7 +1,7 @@
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { QUERY_STALE_TIME_IN_SECONDS } from '@/constants/query';
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: QUERY_STALE_TIME_IN_SECONDS * 1000,

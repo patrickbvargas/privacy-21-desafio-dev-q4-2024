@@ -1,4 +1,4 @@
-import { LoanList } from './loan-list';
-import { LoanCreate } from './loan-create';
+import { LoanPage } from './loan';
+import { LoanEditPage } from './loan-edit';
 
-export { LoanList, LoanCreate };
+export { LoanPage, LoanEditPage };
