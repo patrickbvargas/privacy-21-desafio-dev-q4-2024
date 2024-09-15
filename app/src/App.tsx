@@ -1,5 +1,16 @@
+import { LoanList } from '@/pages';
+import { Container, Header, Content } from '@/layouts';
+
 function App() {
-  return <h1 className="text-3xl text-neutral-800">Privacy21 Demo</h1>;
+  return (
+    <Container>
+      <Header title="Privacy21" />
+      <Content>
+        {/* // TODO: implement React Router} */}
+        <LoanList />
+      </Content>
+    </Container>
+  );
 }
 
 export default App;
