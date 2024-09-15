@@ -29,8 +29,11 @@ export const loanOutputSchema = loanSchema.omit({ bookId: true }).extend({
 export type LoanOutputSchemaType = z.infer<typeof loanOutputSchema>;
 
 export const loanCreateSchema = z.object({
-  bookId: z.string(),
-  startDate: z.string(),
+  bookId: z.string().min(1, 'Livro obrigatório'),
+  startDate: z
+    .string()
+    .min(1, 'Data de retirada obrigatória')
+    .transform((val) => new Date(val).toISOString()),
 });
 export type LaonCreateSchemaType = z.infer<typeof loanCreateSchema>;
 

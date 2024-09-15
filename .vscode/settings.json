@@ -17,6 +17,7 @@
     "**/index.html": true,
     "**/vite.config.ts": true,
     "**/vite-env.d.ts": true,
-    "**/tailwind.config.js": true
+    "**/tailwind.config.js": true,
+    "**/components.json": true
   }
 }

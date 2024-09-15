@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { TrashIcon, PencilIcon } from '@heroicons/react/24/solid';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { deleteLoan } from '@/services/loan';
 import { getAllLoans } from '@/services/loan';
-import { type LoanOutputSchemaType } from '@/schemas/loan';
+import { TrashIcon, PencilIcon } from '@heroicons/react/24/solid';
 import {
   getDateLocaleString,
   getLoanStatusAlias,
@@ -17,16 +16,21 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { useQuery } from '@tanstack/react-query';
 
 export const LoanList = () => {
-  const [loans, setLoans] = React.useState<LoanOutputSchemaType[] | null>(null);
+  const {
+    data: loans,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ['loans'],
+    queryFn: getAllLoans,
+  });
 
-  React.useEffect(() => {
-    getAllLoans().then(setLoans);
-  }, []);
-
-  // TODO: Implement loading/suspense
-  if (!loans) return null; // TODO: replace for NoData component
+  if (isLoading) return <p>Carregando...</p>; // TODO: replace for Loading component
+  if (isError) return <p>Um erro ocorreu, tente novamente.</p>; // TODO: replace for Error component
+  if (!loans || loans.length === 0) return <p>Nenhum empréstimo encontrado.</p>; // TODO: replace for Empty component
 
   return (
     <Table>
@@ -47,9 +51,7 @@ export const LoanList = () => {
           <TableRow key={loan.id}>
             <TableCell>{loan.book.name}</TableCell>
             <TableCell>
-              <Badge variant="secondary">
-                {getLoanStatusAlias(loan.status)}
-              </Badge>
+              <Badge variant="outline">{getLoanStatusAlias(loan.status)}</Badge>
             </TableCell>
             <TableCell>{getDateLocaleString(loan.startDate)}</TableCell>
             <TableCell>{getDateLocaleString(loan.deadline)}</TableCell>
@@ -65,7 +67,11 @@ export const LoanList = () => {
                 <Button variant="outline" size="icon">
                   <PencilIcon className="size-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => deleteLoan(loan.id)}
+                >
                   <TrashIcon className="size-4" />
                 </Button>
               </div>
