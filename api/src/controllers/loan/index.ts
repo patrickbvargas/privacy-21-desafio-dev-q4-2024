@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { Request, Response } from 'express';
 import { prisma } from '../../lib/prisma';
-import { getLoanDeadline } from '../../utils/loan';
+import { getLoanDeadline } from '../../services/loan';
 import { LOAN_DELAY_FEE_AMOUNT_PER_DAY } from '../../constants';
 import {
   loanOutputSchema,

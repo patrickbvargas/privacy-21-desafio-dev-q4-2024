@@ -1,7 +1,10 @@
 import { z } from 'zod';
 import { $Enums as ENUM } from '@prisma/client';
 import { bookSchema } from '../book';
-import { getLoanDelayDaysCount, getLoanDelayFeeAmount } from '../../utils/loan';
+import {
+  getLoanDelayDaysCount,
+  getLoanDelayFeeAmount,
+} from '../../services/loan';
 
 export const loanSchema = z.object({
   id: z.string(),

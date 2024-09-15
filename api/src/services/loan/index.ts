@@ -1,9 +1,8 @@
 import {
   LOAN_DAYS_ALLOWED_WITHOUT_FEE,
   LOAN_DELAY_DAYS_ALLOWED,
+  MILLISECONDS_IN_DAYS,
 } from '../../constants';
-
-const MILLISECONDS_IN_DAYS = 1000 * 60 * 60 * 24;
 
 export const getLoanDeadline = (startDateISO: string) => {
   try {

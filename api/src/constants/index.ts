@@ -1,3 +1,4 @@
 export const LOAN_DAYS_ALLOWED_WITHOUT_FEE = 30;
 export const LOAN_DELAY_FEE_AMOUNT_PER_DAY = 0.5;
 export const LOAN_DELAY_DAYS_ALLOWED = 1;
+export const MILLISECONDS_IN_DAYS = 1000 * 60 * 60 * 24;
