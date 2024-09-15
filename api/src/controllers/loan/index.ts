@@ -15,6 +15,9 @@ export const getAllLoans = async (req: Request, res: Response) => {
       include: {
         book: true,
       },
+      orderBy: {
+        createdAt: 'asc',
+      },
     });
     if (!loans) {
       return res.json(loans);
