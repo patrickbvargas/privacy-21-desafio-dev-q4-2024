@@ -2,6 +2,10 @@
 
 Desenvolva uma aplicação para uma biblioteca em que seja possível gerenciar os empréstimos de livros e calcular a multa no caso de devolução atrasada ou não devolução.
 
+## Atenção para Avaliação
+
+Atualizar a URL presente em ~`web/src/services/Api.ts`~ `web/lib/axios/index.ts` para a fornecida pelo GitHub CodeSpace na porta 8080 para que a API seja acessada.
+
 #### Especificações:
 
 - Deve ser possível criar, editar, listar e excluir cada um dos empréstimos realizados
@@ -23,7 +27,7 @@ Permitirmos que você altere o projeto como preferir, incluindo dependências, l
 
 O projeto é dividido entre api e web:
 
-- API (pasta `api`): Projeto em Node.JS que expões as rotas da API por uma interface HTTP. 
+- API (pasta `api`): Projeto em Node.JS que expões as rotas da API por uma interface HTTP.
 - Web (pasta `web`): Front-end em React que consome as rotas providas pela API
 
 Devido à existência de duas aplicações, será necessário executar os dois processos separados em dois terminais distintos do sistema operacional.
@@ -49,11 +53,11 @@ Se você optar por utilizar o GitHub CodeSpace, todas as etapas que envolvem a i
 1. Instale o Node.JS versão 20 na sua máquina
 2. Instale o Docker e o Docker Compose na sua máquina
 3. Abra um novo terminal, ou uma nova aba no mesmo terminal
-5. Entre na pasta `api` com `cd api`
-6. Instale as dependências com `yarn install`
-7. Execute `yarn dev` para iniciar o projeto
-8. Teste a API no navegador acessando [http://localhost:8080](http://localhost:8080). Se você estiver utilizando o GitHub CodeSpaces, deverá consultar instruções da plataforma de como acessar o servidor. Além disso, se você utilizar o GitHub CodeSpaces, terá de atualizar a URL da API no projeto `web` para a URL correta.
-9. O back-end já possui um ambiente com o banco de dados PostgreSQL instalado no formato de contêiners Docker, e pode ser acessado pelo endereço "database" na porta 5432 (se estiver dentro de um container) ou "127.0.0.1" na porta 5432 (se estiver em um sistema operacional nativo).
+4. Entre na pasta `api` com `cd api`
+5. Instale as dependências com `yarn install`
+6. Execute `yarn dev` para iniciar o projeto
+7. Teste a API no navegador acessando [http://localhost:8080](http://localhost:8080). Se você estiver utilizando o GitHub CodeSpaces, deverá consultar instruções da plataforma de como acessar o servidor. Além disso, se você utilizar o GitHub CodeSpaces, terá de atualizar a URL da API no projeto `web` para a URL correta.
+8. O back-end já possui um ambiente com o banco de dados PostgreSQL instalado no formato de contêiners Docker, e pode ser acessado pelo endereço "database" na porta 5432 (se estiver dentro de um container) ou "127.0.0.1" na porta 5432 (se estiver em um sistema operacional nativo).
 
 # Entrega
 

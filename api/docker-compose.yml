@@ -4,6 +4,7 @@ services:
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
+      POSTGRES_DB: privacy-21
     volumes:
       - database:/var/lib/postgresql/data
     ports:
@@ -16,6 +17,10 @@ services:
       - 8080:8080
     volumes:
       - .:/app
+    depends_on:
+      - database
+    env_file:
+      - .env.docker
 
 volumes:
   database:

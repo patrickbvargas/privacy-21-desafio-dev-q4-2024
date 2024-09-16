@@ -37,9 +37,9 @@ const initialBooks: Prisma.BookCreateInput[] = [
 
 const initialLoans: Prisma.LoanCreateInput[] = [
   {
-    status: 'LOANED',
-    startDate: new Date('2024-09-10'),
-    deadline: new Date('2024-09-20'),
+    status: 'RETURNED',
+    startDate: new Date('2024-07-01'),
+    deadline: new Date('2024-07-31'),
     delayFeePerDay: 0.5,
     book: {
       connect: {
@@ -49,9 +49,9 @@ const initialLoans: Prisma.LoanCreateInput[] = [
   },
   {
     status: 'RETURNED',
-    startDate: new Date('2024-09-10'),
-    deadline: new Date('2024-09-20'),
-    returnDate: new Date('2024-09-15'),
+    startDate: new Date('2024-08-01'),
+    deadline: new Date('2024-09-02'),
+    returnDate: new Date('2024-09-06'),
     delayFeePerDay: 0.5,
     book: {
       connect: {
@@ -60,10 +60,9 @@ const initialLoans: Prisma.LoanCreateInput[] = [
     },
   },
   {
-    status: 'RETURNED',
-    startDate: new Date('2024-09-10'),
-    deadline: new Date('2024-09-20'),
-    returnDate: new Date('2024-09-22'),
+    status: 'LOANED',
+    startDate: new Date('2024-08-01'),
+    deadline: new Date('2024-09-02'),
     delayFeePerDay: 0.5,
     book: {
       connect: {
@@ -72,10 +71,9 @@ const initialLoans: Prisma.LoanCreateInput[] = [
     },
   },
   {
-    status: 'LOST',
-    startDate: new Date('2024-09-10'),
-    deadline: new Date('2024-09-20'),
-    lostDate: new Date('2024-09-20'),
+    status: 'LOANED',
+    startDate: new Date('2024-09-15'),
+    deadline: new Date('2024-10-15'),
     delayFeePerDay: 0.5,
     book: {
       connect: {
