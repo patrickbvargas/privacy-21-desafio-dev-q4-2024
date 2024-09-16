@@ -1,17 +1,18 @@
 import { cn } from '@/utils';
-import { PencilIcon } from '@heroicons/react/20/solid';
 import { buttonVariants } from '@/components/ui/button';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid';
 
-export const LoanEdit = ({ id }: { id: string }) => {
+export const LoanView = ({ id }: { id: string }) => {
   return (
     <a
       className={cn(
         buttonVariants({ variant: 'outline', size: 'icon' }),
         'flex gap-2',
       )}
-      href={`/loan/edit/${id}`}
+      href={`/loan/view/${id}`}
+      target="_blank"
     >
-      <PencilIcon className="size-4" />
+      <ArrowTopRightOnSquareIcon className="size-4" />
     </a>
   );
 };

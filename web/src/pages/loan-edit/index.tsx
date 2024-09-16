@@ -92,11 +92,11 @@ export const LoanEditPage = () => {
   return (
     <>
       <PageTitle className="mb-6" title="Editar empréstimo" />
-      <Info label="Livro" value={form.getValues('book.name')} />
+      <Info label="Título do Livro" value={form.getValues('book.name')} />
       <div className="flex gap-10">
         <Info label="Dias de atraso" value={form.getValues('delayDaysCount')} />
         <Info
-          label="Multa"
+          label="Valor da multa"
           value={getCurrencyLocaleString(form.getValues('delayFeeAmount'))}
         />
       </div>

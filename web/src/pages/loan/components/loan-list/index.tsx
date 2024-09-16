@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { getAllLoans } from '@/services/loan';
 import { useQuery } from '@tanstack/react-query';
-import { LoanEdit, LoanDelete } from './components';
+import { LoanEdit, LoanDelete, LoanView } from './components';
 import {
   getDateLocaleString,
   getLoanStatusAlias,
@@ -84,6 +84,7 @@ export const LoanList = () => {
               </TableCell>
               <TableCell>
                 <div className="flex gap-1">
+                  <LoanView id={loan.id} />
                   <LoanEdit id={loan.id} />
                   <LoanDelete id={loan.id} />
                 </div>
