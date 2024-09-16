@@ -7,10 +7,4 @@ COPY yarn.lock .
 
 RUN yarn install
 
-COPY . .
-
-RUN yarn prisma migrate
-
-EXPOSE 8080
-
 ENTRYPOINT ["yarn", "start:dev"]

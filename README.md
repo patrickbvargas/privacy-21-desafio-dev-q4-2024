@@ -4,9 +4,13 @@ Desenvolva uma aplicação para uma biblioteca em que seja possível gerenciar o
 
 ## Atenção para Avaliação
 
-No segundo terminal entrar na pasta web, e executar o comando `yarn dev`
-No terceiro terminal entrar na pasta api, e executar o comando `yarn seed`
-Atualizar a URL presente em ~`web/src/services/Api.ts`~ `web/lib/axios/index.ts` para a fornecida pelo GitHub CodeSpace na porta 8080 para que a API seja acessada.
+1. Abrir o repositório em um CodeSpace
+2. Instalar as dependências do front-end e back-end.
+3. No primeiro terminal entrar na pasta api, e executar o comando `yarn dev`
+4. No segundo terminal entrar na pasta api, e executar o comando `yarn seed`
+5. No terceiro terminal entrar na pasta web, e executar o comando `yarn dev`
+6. Alterar a porta 8080 para visibilidade pública na lista de portas redirecionadas pelo GitHub CodeSpace
+7. Atualizar a URL presente em `web/lib/axios/index.ts` para a fornecida pelo GitHub CodeSpace na porta 8080 para que a API seja acessada.
 
 #### Especificações:
 
