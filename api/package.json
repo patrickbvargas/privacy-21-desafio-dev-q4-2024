@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "docker compose up --build",
+    "seed": "yarn prisma migrate deploy && yarn prisma db seed",
     "start:dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node src/index.ts\""
   }
 }
