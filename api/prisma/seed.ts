@@ -37,7 +37,7 @@ const initialBooks: Prisma.BookCreateInput[] = [
 
 const initialLoans: Prisma.LoanCreateInput[] = [
   {
-    status: 'RETURNED',
+    status: 'LOANED',
     startDate: new Date('2024-07-01'),
     deadline: new Date('2024-07-31'),
     delayFeePerDay: 0.5,
