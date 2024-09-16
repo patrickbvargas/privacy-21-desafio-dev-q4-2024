@@ -13,6 +13,11 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 
+const MESSAGE = {
+  CONFIRM_DELETE:
+    'Você tem certeza de que deseja remover este empréstimo? Esta ação é permanente e não pode ser desfeita.',
+};
+
 interface LoanDeleteProps extends React.ComponentProps<typeof Dialog> {
   id: string;
 }
@@ -49,10 +54,7 @@ export const LoanDelete = ({ id, ...props }: LoanDeleteProps) => {
           <DialogTitle>Remover empréstimo</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 flex flex-col">
-          <p className="text-sm">
-            Tem certeza que deseja remover o empréstimo? Esta ação não pode ser
-            desfeita.
-          </p>
+          <p className="text-sm">{MESSAGE.CONFIRM_DELETE}</p>
           <Button
             className="place-self-end"
             disabled={isLoading}

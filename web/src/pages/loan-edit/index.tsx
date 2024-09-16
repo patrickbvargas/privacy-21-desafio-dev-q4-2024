@@ -28,6 +28,11 @@ import {
 } from '@/components/ui/form';
 import { getCurrencyLocaleString } from '@/utils';
 
+const MESSAGE = {
+  LOADING:
+    'Estamos carregando os dados do empréstimo. Por favor, aguarde um momento...',
+};
+
 const isLoanValid = (loan: LoanOutputSchemaType) => {
   if (loan.status === LoanStatus.LOANED && !loan.startDate) {
     toast.warning(
@@ -80,12 +85,13 @@ export const LoanEditPage = () => {
       setIsLoading(false);
     }
   };
-  if (!form.getValues('id'))
-    return <div>Carregando dados do empréstimo...</div>;
+
+  if (loanOutputSchema.safeParse(form.getValues()).success === false)
+    return <p>{MESSAGE.LOADING}</p>; // TODO: replace for Loading component
 
   return (
     <>
-      <PageTitle className="mb-4" title="Editar empréstimo" />
+      <PageTitle className="mb-6" title="Editar empréstimo" />
       <Info label="Livro" value={form.getValues('book.name')} />
       <div className="flex gap-10">
         <Info label="Dias de atraso" value={form.getValues('delayDaysCount')} />
@@ -96,7 +102,7 @@ export const LoanEditPage = () => {
       </div>
       <Form {...form}>
         <form
-          className="space-y-4 mt-2 max-w-lg"
+          className="space-y-4 max-w-lg"
           onSubmit={form.handleSubmit(handleFormSubmit)}
         >
           <div className="grid  grid-cols-2 gap-4 w-full">

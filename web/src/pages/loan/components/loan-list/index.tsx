@@ -16,6 +16,25 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
+const HEADING = {
+  BOOK_TITLE: 'Título do Livro',
+  STATUS: 'Estado',
+  CHECKOUT_DATE: 'Data de Retirada',
+  RETURN_DATE: 'Data de Devolução',
+  RETURNED_OR_LOST: 'Devolvido ou Extraviado',
+  DELAY_DAYS: 'Dias de Atraso',
+  FINE_AMOUNT: 'Valor da Multa',
+  ACTIONS: 'Ações',
+};
+
+const MESSAGE = {
+  LOADING:
+    'Estamos carregando os empréstimos. Por favor, aguarde um momento...',
+  ERROR:
+    'Ocorreu um erro ao carregar os empréstimos. Por favor, tente novamente.',
+  EMPTY: 'Não há empréstimos disponíveis no momento.',
+};
+
 export const LoanList = () => {
   const {
     data: loans,
@@ -26,23 +45,23 @@ export const LoanList = () => {
     queryFn: getAllLoans,
   });
 
-  if (isLoading) return <p>Carregando...</p>; // TODO: replace for Loading component
-  if (isError) return <p>Um erro ocorreu, tente novamente.</p>; // TODO: replace for Error component
-  if (!loans || loans.length === 0) return <p>Nenhum empréstimo encontrado.</p>; // TODO: replace for Empty component
+  if (isLoading) return <p>{MESSAGE.LOADING}</p>; // TODO: replace for Loading component
+  if (isError) return <p>{MESSAGE.ERROR}</p>; // TODO: replace for Error component
+  if (!loans || loans.length === 0) return <p>{MESSAGE.EMPTY}</p>; // TODO: replace for Empty component
 
   return (
     <>
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Livro</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Retirada</TableHead>
-            <TableHead>Devolver</TableHead>
-            <TableHead>Devolvido/Extraviado</TableHead>
-            <TableHead>Dias de atraso</TableHead>
-            <TableHead>Multa</TableHead>
-            <TableHead>Ações</TableHead>
+            <TableHead>{HEADING.BOOK_TITLE}</TableHead>
+            <TableHead>{HEADING.STATUS}</TableHead>
+            <TableHead>{HEADING.CHECKOUT_DATE}</TableHead>
+            <TableHead>{HEADING.RETURN_DATE}</TableHead>
+            <TableHead>{HEADING.RETURNED_OR_LOST}</TableHead>
+            <TableHead>{HEADING.DELAY_DAYS}</TableHead>
+            <TableHead>{HEADING.FINE_AMOUNT}</TableHead>
+            <TableHead>{HEADING.ACTIONS}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
